@@ -1,0 +1,7 @@
+<div class="u-mb">
+  <!--The formcontrol instance is coupled to an html element via the FormControl directive-->
+  Favorite food: <input type="text" [formControl]="favoriteFoodControl" />
+  <button (click)="beWrong()">Be wrong via code</button>
+</div>
+
+<div>current value: {{ favoriteFoodControl.value }}</div>

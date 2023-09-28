@@ -1,0 +1,26 @@
+<form [formGroup]="favoritesForm" (submit)="submit()">
+  <div class="u-mb">
+    Favorite food:
+    <input
+      formControlName="food"
+      type="text"
+      [ngClass]="{ 'has-error': favoritesForm.controls.food.invalid }"
+    />
+    <button type="button" (click)="beWrong()">Be wrong via code</button>
+    <div *ngIf="favoritesForm.controls.food.errors?.required">
+      This field is required
+    </div>
+    <div *ngIf="favoritesForm.controls.food.errors?.notTastyFood">
+      That is disgusting
+    </div>
+  </div>
+  <div class="u-mb">
+    Favorite number:
+    <input
+      type="number"
+      formControlName="number"
+      [ngClass]="{ 'has-error': favoritesForm.controls.number.invalid }"
+    />
+  </div>
+  <button [disabled]="favoritesForm.invalid" type="submit">Submit form</button>
+</form>

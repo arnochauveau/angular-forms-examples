@@ -1,0 +1,9 @@
+<form [formGroup]="favoritesForm">
+  <div class="u-mb">
+    Favorite food: <input formControlName="food" type="text" />
+    <button (click)="beWrong()">Be wrong via code</button>
+  </div>
+  <div class="u-mb">
+    Favorite number: <input type="text" formControlName="number" />
+  </div>
+</form>
